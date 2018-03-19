@@ -1,6 +1,6 @@
 # ComputerModelsCliApp
 
-TODO: Delete this and the text above, and describe your gem
+This is a CLI app that allows you to choose and see data of the current laptop models that were scraped directly from "www.tigerdirect.com/applications/Category/guidedSearch.asp?CatId=17".
 
 ## Installation
 
@@ -31,3 +31,11 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/'Blairrichmond'/computer_models_cli_app.
+<<<<<<< HEAD
+=======
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+# computer-models-cli-app
+>>>>>>> 03652be4d78379003f13f185a2f9e5005bdbd3e4
