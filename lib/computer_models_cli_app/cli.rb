@@ -7,23 +7,31 @@ class ComputerModelsCliApp::CLI
 
   def scraped_models
     @models = ComputerModelsCliApp::Computers.collection
+    @models.each.with_index(1) do |model, n|
+      puts "#{n}. #{model.name}"
+    end
   end
 
   def models_choice
     input = nil
 
+    puts "Looking for a laptop? No worries! Please select a model to see the price (1 - 16), List to see the models, or type Exit:"
+
     while input != "exit"
-      puts "Looking for a laptop? No worries! Please select a model to see the price (1 - 16), List to see the models, or type Exit:"
 
       input = gets.strip.downcase
 
       #need to think of ways to get all models secured for input
-      if input.to_i > 0
-        puts @models[input.to_i-1]
+      if input.to_i > 16
+        puts "Sorry! Not in stores!"
+      elsif input.to_i > 0
+        the_model = @models[input.to_i-1]
+        puts "#{the_model.name}, #{the_model.price}, #{the_model.url}"
       elsif input == "exit"
         ends
       elsif input == "list"
         scraped_models
+        puts "Looking for a laptop? No worries! Please select a model to see the price (1 - 16), List to see the models, or type Exit:"
       else
         puts "Sorry! Not in stores!"
       end
