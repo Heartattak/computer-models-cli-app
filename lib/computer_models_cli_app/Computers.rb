@@ -1,10 +1,14 @@
 class ComputerModelsCliApp::Computers
 
-  def self.collection
-    model = self.new
+  attr_accessor :name, :price, :url
 
-    model.name =
-    model.price =
+  def self.collection
+    puts "cjf"
+    #model = self.new
+
+    #model.name =
+    #model.price =
+    #model.url =
   end
 
 end

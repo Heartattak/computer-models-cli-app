@@ -12,20 +12,20 @@ class ComputerModelsCliApp::CLI
   def models_choice
     input = nil
 
-    while input == nil
+    while input != "exit"
       puts "Looking for a laptop? No worries! Please select a model to see the price (1 - 16), List to see the models, or type Exit:"
 
       input = gets.strip.downcase
 
       #need to think of ways to get all models secured for input
-      case input
-      when input = "exit"
+      if input.to_i > 0
+        puts @models[input.to_i-1]
+      elsif input == "exit"
         ends
-      when "list"
+      elsif input == "list"
         scraped_models
-      else input != "exit"
+      else
         puts "Sorry! Not in stores!"
-        models_choice
       end
     end
   end
