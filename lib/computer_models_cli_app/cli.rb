@@ -5,12 +5,9 @@ class ComputerModelsCliApp::CLI
     models_choice
   end
 
-  #def scraped_models
-    #@models = ComputerModelsCliApp::Computers.collection
-    #@models.each.with_index(1) do |model, n|
-      #puts "#{n}. #{model}"
-    #end
-  #end
+  def scraped_models
+    ComputerModelsCliApp::Scraper.new.product
+  end
 
   #def models_choice
     #input = nil
