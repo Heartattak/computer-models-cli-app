@@ -4,16 +4,16 @@ class ComputerModelsCliApp::Computers
 
     @@all = []
 
-  def self.new_from_page(i)
-    self.new(
-      i.css("div.product.productInfo.itemName a").text
-    )
-  end
-
   def initialize(price=nil, url=nil)
     @url = url
     @price = price
     @@all << self
+  end
+
+  def self.new_from_page(i)
+    self.new(
+      i.css("div.product.productInfo.itemName a").text
+    )
   end
 
   def self.collection

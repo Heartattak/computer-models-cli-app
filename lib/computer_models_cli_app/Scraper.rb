@@ -9,7 +9,9 @@ class ComputerModelsCliApp::Scraper
   end
 
   def product
-    index.each.with_index{ |model, i| ComputerModelsCliApp::Computers.new_from_page(model)}
+    index.each do |model|
+      ComputerModelsCliApp::Computers.new_from_page(model)
+    end
   end
 
 end
