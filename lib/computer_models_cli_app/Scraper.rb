@@ -8,10 +8,8 @@ class ComputerModelsCliApp::Scraper
     self.scraped_page.css("div.product")
   end
 
-  def product
-    index.each do |model|
-      ComputerModelsCliApp::Computers.new_from_page(model)
-    end
-  end
+  #def product
+    #ComputerModelsCliApp::Computers.new_from_page(index)
+  #end
 
 end

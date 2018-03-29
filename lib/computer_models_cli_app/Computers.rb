@@ -2,7 +2,7 @@ class ComputerModelsCliApp::Computers
 
   attr_accessor :price, :url
 
-    @@all = []
+  @@all = []
 
   def initialize(price=nil, url=nil)
     @url = url

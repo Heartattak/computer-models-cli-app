@@ -6,10 +6,11 @@ class ComputerModelsCliApp::CLI
   end
 
   def scraped_models
-    scraped_model = ComputerModelsCliApp::Scraper.new.product
-    binding.pry
-      scraped_model.each.with_index do |model, i|
+    @models = []
+    scraped_model = ComputerModelsCliApp::Scraper.new.index
+      scraped_model.each_with_index do |model, i|
         puts "#{i}. #{model}"
+        @models << model
     end
   end
 
@@ -38,8 +39,8 @@ class ComputerModelsCliApp::CLI
     end
   end
 
-  #def ends
-    #puts "Goodbye!"
-  #end
+  def ends
+    puts "Goodbye!"
+  end
 
 end
