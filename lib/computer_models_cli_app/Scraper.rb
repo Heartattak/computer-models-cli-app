@@ -1,15 +1,15 @@
 class ComputerModelsCliApp::Scraper
 
   def scraped_page
-    Nokogiri::HTML(open("http://www.tigerdirect.com/applications/Category/guidedSearch.asp?CatId=17"))
+    doc = Nokogiri::HTML(open("http://www.tigerdirect.com/applications/Category/guidedSearch.asp?CatId=17"))
+    array = []
+    doc.css("div.product").each do |model|
+      name = model.css("itemName a").text
+      price = model.css("div.product.productAction.salePrice sup").text.to_i
+      url = model.css("div.product.productInfo.itemName a")
+
+      array << name
+    end
+    array
   end
-
-  def index
-    self.scraped_page.css("div.product")
-  end
-
-  #def product
-    #ComputerModelsCliApp::Computers.new_from_page(index)
-  #end
-
 end
