@@ -7,8 +7,8 @@ class ComputerModelsCliApp::CLI
 
   def scraped_models
     @models = []
-    scraped_model = ComputerModelsCliApp::Scraper.new.scraped_page
-      scraped_model.each.with_index(1) do |m, i|
+    scraped_model = ComputerModelsCliApp::Computers.new.print_models
+      scraped_model.collect.with_index(1) do |m, i|
         puts "#{i}. #{m}"
         @models << m
     end
