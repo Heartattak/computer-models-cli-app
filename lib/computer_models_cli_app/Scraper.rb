@@ -5,10 +5,9 @@ class ComputerModelsCliApp::Scraper
     array = []
     doc.css("div.product").each do |model|
       computer = ComputerModelsCliApp::Computers.new
-
       computer.name = model.css(".itemName a").text
-      computer.price = model.css("div.product.productAction.salePrice sup").text.to_i
-      computer.url = model.css("div.product.productInfo.itemName a")
+      computer.price = model.css(".salePrice sup").text
+      computer.url = model.css(".itemName a").attribute("href")
 
       computer.save
     end

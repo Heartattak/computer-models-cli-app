@@ -6,11 +6,10 @@ class ComputerModelsCliApp::CLI
   end
 
   def scraped_models
-    @models = []
-    scraped_model = ComputerModelsCliApp::Computers.new.print_models
-      scraped_model.collect.with_index(1) do |m, i|
-        puts "#{i}. #{m}"
-        @models << m
+    ComputerModelsCliApp::Scraper.new.scraped_page
+    @models = ComputerModelsCliApp::Computers.models
+    list = @models.collect.with_index(1) do |m, i|
+        puts "#{i}. #{m.name}"
     end
   end
 
@@ -27,7 +26,7 @@ class ComputerModelsCliApp::CLI
         puts "Sorry! Not in stores!"
       elsif input.to_i > 0
         the_model = @models[input.to_i-1]
-        puts "#{the_model}, #{the_model.price}, #{the_model.url}"
+        puts "#{the_model.name}, #{the_model.price}, #{the_model.url}"
       elsif input == "exit"
         ends
       elsif input == "list"

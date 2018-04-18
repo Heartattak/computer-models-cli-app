@@ -8,7 +8,7 @@ class ComputerModelsCliApp::Computers
     @@all << self
   end
 
-  def print_models
+  def self.models
     @@all
   end
 
