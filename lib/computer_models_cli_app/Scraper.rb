@@ -6,7 +6,7 @@ class ComputerModelsCliApp::Scraper
     doc.css("div.product").each do |model|
       computer = ComputerModelsCliApp::Computers.new
       computer.name = model.css(".itemName a").text
-      computer.price = model.css(".salePrice sup").text
+      computer.price = model.css(".salePrice").text.split("\r\n")
       computer.url = model.css(".itemName a").attribute("href")
 
       computer.save
