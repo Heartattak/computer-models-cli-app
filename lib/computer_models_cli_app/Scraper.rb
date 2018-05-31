@@ -14,7 +14,7 @@ class ComputerModelsCliApp::Scraper
       computer.price = "$" + price + model.css(".salePrice").children[5].text
 
 
-      computer.url = "http://www.tigerdirect.com" + model.css(".itemName a").attribute("href").text.gsub("..", "")
+      computer.url = "http://www.tigerdirect.com/applications" + model.css(".itemName a").attribute("href").text.gsub("..", "")
 
       computer.save
     end
