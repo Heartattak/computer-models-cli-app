@@ -1,6 +1,6 @@
 # ComputerModelsCliApp
 
-This is a CLI app that allows you to choose and see data of the current laptop models that were scraped directly from "www.tigerdirect.com/applications/Category/guidedSearch.asp?CatId=17".
+This is a CLI app that allows you to choose and see data of current laptop models that were scraped directly from "www.tigerdirect.com/applications/Category/guidedSearch.asp?CatId=17".
 
 ## Installation
 
@@ -20,7 +20,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+TODO: Once gem has been successfully installed and opened. Follow the instructions on the terminal for what to type in (numbers, words, etc.)
 
 ## Development
 
