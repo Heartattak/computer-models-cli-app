@@ -12,7 +12,7 @@ class ComputerModelsCliApp::Computers
     @@all
   end
 
-  def initialize
+  def initialize(name, url, price)
     @name = name
     @url = url
     @price = price

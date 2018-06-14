@@ -31,11 +31,8 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/'Blairrichmond'/computer_models_cli_app.
-<<<<<<< HEAD
-=======
 
 ## License
 
 The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
 # computer-models-cli-app
->>>>>>> 03652be4d78379003f13f185a2f9e5005bdbd3e4

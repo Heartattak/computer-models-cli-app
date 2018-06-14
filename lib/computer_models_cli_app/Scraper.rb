@@ -4,18 +4,17 @@ class ComputerModelsCliApp::Scraper
     doc = Nokogiri::HTML(open("http://www.tigerdirect.com/applications/Category/guidedSearch.asp?CatId=17"))
     array = []
     doc.css("div.product").each do |model|
-      computer = ComputerModelsCliApp::Computers.new
-      computer.name = model.css(".itemName a").text
+      name = model.css(".itemName a").text
       price = model.css(".salePrice").children[4].text
       if(price == " ")
         price = model.css(".salePrice sup #text")
       end
 
-      computer.price = "$" + price + model.css(".salePrice").children[5].text
+      price = "$" + price + model.css(".salePrice").children[5].text
 
 
-      computer.url = "http://www.tigerdirect.com/applications" + model.css(".itemName a").attribute("href").text.gsub("..", "")
-
+      url = "http://www.tigerdirect.com/applications" + model.css(".itemName a").attribute("href").text.gsub("..", "")
+      computer = ComputerModelsCliApp::Computers.new(name, url, price)
       computer.save
     end
   end
